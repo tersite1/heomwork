@@ -27,9 +27,9 @@ export default function Hero() {
           <div>
             <p className="text-[15px] text-[var(--muted)] mb-3">워크모어에서</p>
             <h1 className="text-[44px] md:text-[52px] font-black leading-[1.1] tracking-tight">
-              머무는 동안이
+              잠깐 살 집을
               <br />
-              일이 되는 집
+              찾아보세요
             </h1>
           </div>
           <SearchBar />
