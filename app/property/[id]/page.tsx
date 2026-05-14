@@ -50,9 +50,10 @@ export default async function PropertyPage({ params }: { params: Params }) {
               </div>
 
               <section className="py-8 border-b border-[var(--line)]">
-                <h2 className="text-[18px] font-black">이 집 소개</h2>
+                <h2 className="text-[18px] font-black">집 소개</h2>
                 <p className="mt-3 text-[14px] leading-7 text-[var(--muted)]">
-                  단기로 머물기에 부족함 없도록 풀옵션으로 준비된 워크모어 추천 매물입니다. 위치, 동선, 채광까지 꼼꼼히 검수했어요. 처음 방문하시는 분도 편하게 머물 수 있도록 입실 안내문을 드립니다.
+                  바로 입주 가능한 풀옵션 단기 매물이에요. 침구, 식기, 세탁기까지 갖춰져 있어 캐리어만 들고 오시면 됩니다.
+                  체크인 전날 출입 방법과 주변 안내를 채팅으로 보내드려요.
                 </p>
               </section>
 
@@ -73,29 +74,37 @@ export default async function PropertyPage({ params }: { params: Params }) {
 
               <section className="py-8">
                 <h2 className="text-[18px] font-black">위치</h2>
-                <div className="mt-4 h-[260px] rounded-xl border border-[var(--line)] bg-[var(--surface-soft)] flex items-center justify-center text-[var(--muted)] text-[13px]">
-                  지도 자리 (데모용)
+                <p className="mt-1 text-[13px] text-[var(--muted)]">{p.region}</p>
+                <div className="mt-4 h-[260px] rounded-xl border border-[var(--line)] bg-[var(--surface-soft)] relative overflow-hidden">
+                  <div
+                    aria-hidden
+                    className="absolute inset-0 opacity-50"
+                    style={{
+                      backgroundImage:
+                        "linear-gradient(#cdd6e0 1px, transparent 1px), linear-gradient(90deg, #cdd6e0 1px, transparent 1px)",
+                      backgroundSize: "32px 32px",
+                    }}
+                  />
+                  <span className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--brand)] text-white text-[12px] font-bold px-3 py-1.5 rounded-full shadow">
+                    워크모어 위치
+                  </span>
                 </div>
               </section>
             </div>
 
             <aside className="md:sticky md:top-24 self-start border border-[var(--line)] rounded-2xl p-5 shadow-sm">
-              <p className="text-[13px] text-[var(--muted)]">주 단위 / 월 단위 요금</p>
-              <p className="mt-1 text-[22px] font-black">
+              <p className="text-[22px] font-black">
                 주 {p.pricePerWeek.toLocaleString()}원
               </p>
-              <p className="text-[14px] text-[var(--muted)]">
-                월 {p.pricePerMonth.toLocaleString()}원
+              <p className="text-[13px] text-[var(--muted)]">
+                월 단위로 계약하면 {p.pricePerMonth.toLocaleString()}원
               </p>
               <button className="mt-4 w-full bg-[var(--brand)] text-white rounded-xl py-3 font-bold hover:opacity-90">
-                계약 문의하기
+                계약 문의
               </button>
               <button className="mt-2 w-full border border-[var(--line)] rounded-xl py-3 font-semibold hover:bg-[var(--surface-soft)]">
-                채팅 시작하기
+                호스트와 채팅
               </button>
-              <p className="mt-3 text-[12px] text-[var(--muted)] text-center">
-                실제 결제는 발생하지 않는 데모 페이지입니다.
-              </p>
             </aside>
           </div>
         </div>

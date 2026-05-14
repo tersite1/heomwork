@@ -8,7 +8,6 @@ import Footer from "@/components/Footer";
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [pw, setPw] = useState("");
-  const [submitted, setSubmitted] = useState(false);
 
   return (
     <>
@@ -16,17 +15,11 @@ export default function LoginPage() {
       <main className="flex-1 bg-[var(--surface-soft)]">
         <div className="max-w-[420px] mx-auto px-6 py-16">
           <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] p-8">
-            <h1 className="text-[22px] font-black text-center">워크모어 로그인</h1>
-            <p className="mt-1 text-center text-[13px] text-[var(--muted)]">
-              잠깐 살 집을 더 빠르게 찾을 수 있어요.
-            </p>
+            <h1 className="text-[22px] font-black text-center">로그인</h1>
 
             <form
               className="mt-6 flex flex-col gap-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
+              onSubmit={(e) => e.preventDefault()}
             >
               <label className="block">
                 <span className="text-[12px] font-semibold text-[var(--muted)]">이메일</span>
@@ -56,11 +49,6 @@ export default function LoginPage() {
               >
                 로그인
               </button>
-              {submitted && (
-                <p className="text-[12px] text-[var(--muted)] text-center">
-                  데모 페이지입니다. 실제 인증은 동작하지 않아요.
-                </p>
-              )}
             </form>
 
             <div className="my-6 flex items-center gap-3 text-[12px] text-[var(--muted)]">
@@ -80,7 +68,7 @@ export default function LoginPage() {
             </div>
 
             <p className="mt-6 text-center text-[12.5px] text-[var(--muted)]">
-              아직 계정이 없으신가요?{" "}
+              계정이 없다면{" "}
               <Link href="/signup" className="text-[var(--brand)] font-bold hover:underline">
                 회원가입
               </Link>

@@ -4,7 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SearchBar from "@/components/SearchBar";
 import PropertyCard from "@/components/PropertyCard";
-import { properties, searchProperties } from "@/lib/properties";
+import { searchProperties } from "@/lib/properties";
 
 const TYPES = ["전체", "오피스텔", "아파트", "원룸", "투룸", "쓰리룸+"] as const;
 
@@ -56,20 +56,17 @@ export default async function SearchPage({ searchParams }: { searchParams: Searc
 
           <div className="flex items-baseline justify-between">
             <h1 className="text-[20px] font-black">
-              {q ? <>‘{q}’ 검색 결과</> : "전체 매물"}
+              {q ? <>‘{q}’ 결과</> : "전체 매물"}
               <span className="ml-2 text-[14px] font-medium text-[var(--muted)]">
-                총 {list.length}건
+                {list.length}건
               </span>
             </h1>
-            <p className="text-[13px] text-[var(--muted)]">
-              총 {properties.length}건 중 {list.length}건 표시
-            </p>
           </div>
 
           {list.length === 0 ? (
             <div className="mt-16 text-center text-[var(--muted)]">
-              <p className="text-[15px] font-semibold">검색 결과가 없어요</p>
-              <p className="mt-1 text-[13px]">다른 지역이나 카테고리로 검색해 보세요.</p>
+              <p className="text-[15px] font-semibold">조건에 맞는 매물이 없어요</p>
+              <p className="mt-1 text-[13px]">지역이나 카테고리를 바꿔서 찾아보세요.</p>
             </div>
           ) : (
             <ul className="mt-6 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-5 gap-y-8">

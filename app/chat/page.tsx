@@ -38,8 +38,7 @@ export default function ChatPage() {
           </aside>
           <section className="flex items-center justify-center bg-[var(--surface-soft)]">
             <div className="text-center text-[var(--muted)]">
-              <p className="text-[15px] font-semibold">대화를 선택해 주세요</p>
-              <p className="mt-1 text-[13px]">왼쪽 목록에서 채팅을 클릭하면 메시지를 볼 수 있어요.</p>
+              <p className="text-[15px] font-semibold">왼쪽에서 대화를 골라주세요</p>
             </div>
           </section>
         </div>

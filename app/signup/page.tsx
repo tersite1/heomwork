@@ -1,12 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export default function SignupPage() {
-  const [submitted, setSubmitted] = useState(false);
   return (
     <>
       <Header />
@@ -14,13 +12,9 @@ export default function SignupPage() {
         <div className="max-w-[420px] mx-auto px-6 py-16">
           <div className="bg-white rounded-2xl shadow-sm border border-[var(--line)] p-8">
             <h1 className="text-[22px] font-black text-center">회원가입</h1>
-            <p className="mt-1 text-center text-[13px] text-[var(--muted)]">워크모어에 오신 걸 환영해요.</p>
             <form
               className="mt-6 flex flex-col gap-3"
-              onSubmit={(e) => {
-                e.preventDefault();
-                setSubmitted(true);
-              }}
+              onSubmit={(e) => e.preventDefault()}
             >
               <Field label="이름" type="text" placeholder="홍길동" />
               <Field label="이메일" type="email" placeholder="you@example.com" />
@@ -32,14 +26,9 @@ export default function SignupPage() {
               >
                 계정 만들기
               </button>
-              {submitted && (
-                <p className="text-[12px] text-[var(--muted)] text-center">
-                  데모 페이지입니다. 실제 가입은 동작하지 않아요.
-                </p>
-              )}
             </form>
             <p className="mt-6 text-center text-[12.5px] text-[var(--muted)]">
-              이미 계정이 있으신가요?{" "}
+              이미 계정이 있다면{" "}
               <Link href="/login" className="text-[var(--brand)] font-bold hover:underline">
                 로그인
               </Link>
